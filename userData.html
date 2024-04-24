@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserData</title>
+</head>
+<style>
+    *{
+        background-color: burlywood;
+    }
+</style>
+<body>
+    
+    <main>
+        <h1>Hey Buddy , Koshlesh is there to confirm your data</h1>
+        
+        <h1><b></b>User Entered Data</b></h1>
+        <div id="data"></div>
+        <div>
+            <button id="btn">Authenticate by Koshlesh Kumar Raj</button>
+        </div>
+    </main>
+
+    <script>
+
+        const json=localStorage.getItem('form');
+        const obj=JSON.parse(json);
+
+        for(key in obj){
+            const markup= `
+            <div>
+                <span>${key}:${obj[key]}</span>
+                </div>
+                *********************************************************************************************
+                `
+
+                document.getElementById('data').innerHTML+=markup;
+
+
+        }
+    </script>
+</body>
+</html>
